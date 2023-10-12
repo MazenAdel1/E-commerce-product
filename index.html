@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body class="relative overflow-x-hidden font-kumbh-sans">
+    <header
+      class="container relative mx-auto flex items-center justify-between p-5 md:border-b-2 md:border-b-grayish-blue md:p-0"
+    >
+      <div class="flex items-center gap-3 md:gap-7">
+        <button class="menu-button cursor-pointer md:mt-1">
+          <img
+            src="./images/icon-menu.svg"
+            alt="menu"
+            class="block md:hidden"
+          />
+        </button>
+        <div
+          class="mobile-menu absolute left-0 top-0 z-50 hidden h-screen w-screen bg-[rgba(0,0,0,0.25)] md:hidden"
+        >
+          <div
+            class="absolute -left-[231px] flex h-screen w-fit flex-col gap-6 bg-white p-5 pr-32 font-bold text-black transition-all duration-300"
+          >
+            <button class="menu-close-button w-fit py-2">
+              <img src="./images/icon-close.svg" alt="" />
+            </button>
+            <div class="flex flex-col gap-4">
+              <a
+                href="#"
+                class="relative before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-orange before:transition-all hover:before:w-5"
+                >Collections</a
+              >
+              <a
+                href="#"
+                class="relative before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-orange before:transition-all hover:before:w-5"
+                >Men</a
+              >
+              <a
+                href="#"
+                class="relative before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-orange before:transition-all hover:before:w-5"
+                >Women</a
+              >
+              <a
+                href="#"
+                class="relative before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-orange before:transition-all hover:before:w-5"
+                >About</a
+              >
+              <a
+                href="#"
+                class="relative before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-orange before:transition-all hover:before:w-5"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+        <a href="#">
+          <img src="images/logo.svg" alt="sneakers logo" class="pr-4" />
+        </a>
+        <div class="hidden items-center gap-7 md:flex">
+          <a
+            href="#"
+            class="relative block py-9 text-dark-grayish-blue transition before:absolute before:bottom-0 before:left-1/2 before:h-1 before:w-0 before:-translate-x-1/2 before:bg-orange before:transition-all before:content-[''] hover:text-black hover:before:w-full"
+            >Collections</a
+          >
+          <a
+            href="#"
+            class="relative block py-9 text-dark-grayish-blue transition before:absolute before:bottom-0 before:left-1/2 before:h-1 before:w-0 before:-translate-x-1/2 before:bg-orange before:transition-all before:content-[''] hover:text-black hover:before:w-full"
+            >Men</a
+          >
+          <a
+            href="#"
+            class="relative block py-9 text-dark-grayish-blue transition before:absolute before:bottom-0 before:left-1/2 before:h-1 before:w-0 before:-translate-x-1/2 before:bg-orange before:transition-all before:content-[''] hover:text-black hover:before:w-full"
+            >Women</a
+          >
+          <a
+            href="#"
+            class="relative block py-9 text-dark-grayish-blue transition before:absolute before:bottom-0 before:left-1/2 before:h-1 before:w-0 before:-translate-x-1/2 before:bg-orange before:transition-all before:content-[''] hover:text-black hover:before:w-full"
+            >About</a
+          >
+          <a
+            href="#"
+            class="relative block py-9 text-dark-grayish-blue transition before:absolute before:bottom-0 before:left-1/2 before:h-1 before:w-0 before:-translate-x-1/2 before:bg-orange before:transition-all before:content-[''] hover:text-black hover:before:w-full"
+            >Contact</a
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-7">
+        <div class="flex md:relative">
+          <button class="cart-button relative">
+            <span
+              class="cart-popup absolute -right-1 -top-1 z-10 flex hidden h-3 items-center justify-center rounded-full bg-orange px-[5px] text-[10px] text-white"
+            ></span>
+            <img
+              src="images/icon-cart.svg"
+              alt="cart"
+              class="cursor-pointer transition hover:brightness-0"
+            />
+          </button>
+          <div
+            class="cart-list absolute left-1/2 top-[calc(100%+10px)] z-20 flex hidden max-h-[410px] min-h-[200px] w-[95%] min-w-[300px] -translate-x-1/2 flex-col overflow-y-auto overflow-x-hidden rounded-md bg-white p-5 drop-shadow-xl scrollbar-thin scrollbar-thumb-orange md:-left-24 md:mt-3 md:w-max"
+          >
+            <span class="block pb-5 font-bold">Cart</span>
+            <hr class="w-[calc(100%+40px)] -translate-x-5 py-2" />
+
+            <span
+              class="cart-empty-message mt-10 flex h-full items-center justify-center text-sm font-bold text-dark-grayish-blue"
+              >Your cart is empty.</span
+            >
+            <div class="cart-products flex flex-col gap-5"></div>
+          </div>
+        </div>
+        <div
+          class="w-7 cursor-pointer rounded-full hover:border-[2.3px] hover:border-orange md:w-10"
+        >
+          <img src="images/image-avatar.png" alt="avatar" />
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="container mx-auto flex flex-col items-center gap-6 pb-20 pt-0 md:flex-row md:gap-20 md:py-20 lg:gap-32"
+    >
+      <div class="basis-full">
+        <div class="relative md:cursor-pointer md:rounded-2xl">
+          <button
+            class="prev-button absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white md:hidden"
+          >
+            <img src="./images/icon-previous.svg" alt="previous" class="mr-1" />
+          </button>
+          <div class="hidden md:block md:rounded-2xl">
+            <img
+              src="images/image-product-1.jpg"
+              alt="product"
+              class="product-img md:rounded-2xl"
+            />
+          </div>
+          <div
+            class="mobile-product tranistion-all relative flex h-full w-full overflow-hidden md:hidden"
+          >
+            <img
+              src="images/image-product-1.jpg"
+              alt="product"
+              class="mobile-product-img block transition-all"
+            />
+            <img
+              src="images/image-product-2.jpg"
+              alt="product"
+              class="mobile-product-img block transition-all"
+            />
+            <img
+              src="images/image-product-3.jpg"
+              alt="product"
+              class="mobile-product-img block transition-all"
+            />
+            <img
+              src="images/image-product-4.jpg"
+              alt="product"
+              class="mobile-product-img block transition-all"
+            />
+          </div>
+          <button
+            class="next-button absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white md:hidden"
+          >
+            <img src="./images/icon-next.svg" alt="next" class="ml-1" />
+          </button>
+        </div>
+        <div class="hidden w-full items-center gap-7 pt-7 md:flex">
+          <div
+            class="thumbnail relative cursor-pointer rounded-2xl border-[4px] border-orange before:absolute before:h-full before:w-full before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:content-['']"
+            data-index="0"
+          >
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+          <div
+            class="thumbnail relative cursor-pointer rounded-2xl before:absolute before:left-1/2 before:top-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:transition-all before:content-[''] hover:before:h-full hover:before:w-full"
+            data-index="1"
+          >
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+          <div
+            class="thumbnail relative cursor-pointer rounded-2xl before:absolute before:left-1/2 before:top-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:transition-all before:content-[''] hover:before:h-full hover:before:w-full"
+            data-index="2"
+          >
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+          <div
+            class="thumbnail relative cursor-pointer rounded-2xl before:absolute before:left-1/2 before:top-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:transition-all before:content-[''] hover:before:h-full hover:before:w-full"
+            data-index="3"
+          >
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="basis-full px-5 md:px-0">
+        <div class="flex flex-col">
+          <span
+            class="text-sm font-bold uppercase tracking-widest text-orange md:text-base"
+          >
+            Sneaker Company
+          </span>
+          <h2
+            class="product-name pb-6 pt-2 text-3xl font-bold md:pb-8 md:pt-3 md:text-5xl"
+          >
+            Fall Limited Edition Sneakers
+          </h2>
+          <p class="pb-4 text-dark-grayish-blue md:pb-6">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div
+            class="flex items-center justify-between md:flex-col md:items-start md:justify-normal"
+          >
+            <div class="flex items-center gap-4 pb-2">
+              <h3 class="product-price text-2xl font-bold">$125.00</h3>
+              <span
+                class="rounded-md bg-pale-orange px-2 py-[2px] font-bold text-orange"
+                >50%</span
+              >
+            </div>
+            <del class="font-bold text-grayish-blue">$250.00</del>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3 pt-6 md:flex-row">
+          <div
+            class="flex basis-full items-center rounded-md bg-light-grayish-blue md:basis-1/3"
+          >
+            <button
+              class="minus-button flex basis-full justify-center px-2 py-4 hover:brightness-[111%] hover:contrast-[101%] hover:hue-rotate-[215deg] hover:invert-[88%] hover:saturate-[1383%] hover:sepia-[8%]"
+            >
+              <img src="./images/icon-minus.svg" alt="minus" />
+            </button>
+            <span class="quantity flex basis-full justify-center px-2 py-4"
+              >0</span
+            >
+            <button
+              class="plus-button flex basis-full justify-center px-2 py-4 hover:brightness-[111%] hover:contrast-[101%] hover:hue-rotate-[215deg] hover:invert-[88%] hover:saturate-[1383%] hover:sepia-[8%]"
+            >
+              <img src="./images/icon-plus.svg" alt="plus" />
+            </button>
+          </div>
+          <button
+            class="add-to-cart flex basis-full items-center justify-center gap-4 rounded-md bg-orange py-4 font-bold text-white transition hover:bg-[#f9a05c] md:basis-2/3"
+          >
+            <img
+              src="./images/icon-cart.svg"
+              alt="cart"
+              class="brightness-[500]"
+            />
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </section>
+    <div
+      class="lightbox fixed top-0 z-50 hidden h-screen w-full bg-[rgba(0,0,0,0.75)] md:hidden"
+    >
+      <div
+        class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-[45%] flex-col items-center justify-center"
+      >
+        <div
+          class="relative flex items-center justify-center md:w-1/2 lg:w-1/3"
+        >
+          <button
+            class="lightbox-close-button absolute -top-10 right-0 scale-125 brightness-[400] hover:brightness-[200%] hover:contrast-[30%] hover:hue-rotate-[0deg] hover:invert-[88%] hover:saturate-[3000%] hover:sepia-[8%]"
+          >
+            <img src="images/icon-close.svg" alt="close" />
+          </button>
+          <button
+            class="lightbox-prev-button group absolute -left-6 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white"
+          >
+            <img
+              src="./images/icon-previous.svg"
+              alt="prev"
+              class="mr-1 group-hover:brightness-[200%] group-hover:contrast-[30%] group-hover:hue-rotate-[0deg] group-hover:invert-[88%] group-hover:saturate-[3000%] group-hover:sepia-[8%]"
+            />
+          </button>
+          <div
+            class="lightbox-product tranistion-all relative flex w-full overflow-hidden"
+          >
+            <img
+              src="images/image-product-1.jpg"
+              alt="product"
+              class="lightbox-product-img block rounded-xl transition-all"
+            />
+            <img
+              src="images/image-product-2.jpg"
+              alt="product"
+              class="lightbox-product-img block rounded-xl transition-all"
+            />
+            <img
+              src="images/image-product-3.jpg"
+              alt="product"
+              class="lightbox-product-img block rounded-xl transition-all"
+            />
+            <img
+              src="images/image-product-4.jpg"
+              alt="product"
+              class="lightbox-product-img block rounded-xl transition-all"
+            />
+          </div>
+
+          <button
+            class="lightbox-next-button group absolute -right-6 flex h-12 w-12 items-center justify-center rounded-full bg-white"
+          >
+            <img
+              src="./images/icon-next.svg"
+              alt="next"
+              class="ml-1 group-hover:brightness-[200%] group-hover:contrast-[30%] group-hover:hue-rotate-[0deg] group-hover:invert-[88%] group-hover:saturate-[3000%] group-hover:sepia-[8%]"
+            />
+          </button>
+        </div>
+        <div
+          class="flex items-center justify-center gap-7 p-7 pb-0 md:w-2/5 lg:w-1/3"
+        >
+          <div
+            class="lightbox-thumbnail relative cursor-pointer rounded-2xl border-[4px] border-orange before:absolute before:h-full before:w-full before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:content-['']"
+            data-index="0"
+          >
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+          <div
+            class="lightbox-thumbnail relative cursor-pointer rounded-2xl before:absolute before:left-1/2 before:top-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:transition-all before:content-[''] hover:before:h-full hover:before:w-full"
+            data-index="1"
+          >
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+          <div
+            class="lightbox-thumbnail relative cursor-pointer rounded-2xl before:absolute before:left-1/2 before:top-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:transition-all before:content-[''] hover:before:h-full hover:before:w-full"
+            data-index="2"
+          >
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+          <div
+            class="lightbox-thumbnail relative cursor-pointer rounded-2xl before:absolute before:left-1/2 before:top-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-xl before:bg-[rgba(255,255,255,0.5)] before:transition-all before:content-[''] hover:before:h-full hover:before:w-full"
+            data-index="3"
+          >
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="product"
+              class="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
